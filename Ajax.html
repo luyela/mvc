@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> La fonction ajax()</title>
+</head>
+
+<body>
+<button>Quel langage prefere- tu ? </button>
+</body>
+
+<script src="jquery.js"></script>
+<script>
+    $(function() {
+        $('#action').click(function() {
+            $.ajax({
+                type: 'GET',
+                url: 'proverbes.php?l=7
+                timeout: 3000,
+                success: function(data) {
+                    alert(data); },
+                error: function() {
+                    alert('La requête refusé '); }
+            });
+        });
+    });
+</script>
+<div id="menu">
+    <ul id="onglets">
+        <li><button type="button" onclick="html"> HTML </button></li>
+        <li><button type="button" onclick="CSS"> CSS </button></li>
+        <li><button type="button" onclick="JAVASCRIPT"> JAVASCRIPT </button></li>
+        <li><button type="button" onclick="PHP"> PHP </button></li>
+    </ul>
+</div>
+
+</html>
